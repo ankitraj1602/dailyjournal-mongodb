@@ -1,0 +1,23 @@
+<%- include('partials/header'); -%>
+
+<h1>Home</h1>
+<p> <%= content %></p>
+
+
+<%for(let i = 0;i < posts.length;i++){console.log(posts[i].title); %>
+
+<!--The substring below is used to limit the characters to 100.-->
+
+    <h1> <%= posts[i].title %> </h1>
+    <p class = "msgtext"> <%= posts[i].contentBody.substring(0,100) + " ..." %>  <% var link = "/posts/" + posts[i]._id %>
+    <a href = "<%= link %>">Read More...</a></p>
+    <% };%>
+
+
+<!-- Here we made A Variable and used it in <a> tag.
+    Added a a link tag, and when clicked upon the user is redirected to the route where the relevant post page.
+-->
+
+
+<%- include('partials/footer'); -%> 
+
